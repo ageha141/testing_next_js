@@ -40,14 +40,14 @@ export default function TrainingMockup() {
     e.preventDefault();
     if (!input.trim()) return;
 
-    const newMessages = [...messages, { role: 'user', text: input }];
+    const newMessages = [...messages, { role: 'user' as 'user', text: input }];
     setMessages(newMessages);
     setInput("");
 
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,
-        { role: 'ai', text: `ご質問ありがとうございます。現在の「${currentSlide.title}」に関する補足ですね。（※デモ版のため固定応答です）` }
+        { role: 'ai' as 'ai', text: `ご質問ありがとうございます。現在の「${currentSlide.title}」に関する補足ですね。（※デモ版のため固定応答です）` }
       ]);
     }, 1000);
   };
